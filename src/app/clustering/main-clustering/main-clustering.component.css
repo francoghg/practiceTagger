@@ -1,0 +1,27 @@
+body{
+    min-height: max-content;
+    height: 100%;    
+    background-image: url("src\assets\images\pattern1.jpg");    
+    background-size: 10%;
+}
+
+.container{
+    display:grid;
+    min-width: 100%;    
+    padding: 0;
+    background-repeat:repeat;
+}
+
+app-navbar{
+    grid-column: 1, 3; 
+}
+
+.row{   
+    grid-row: 2; 
+    background-color: var(--darkgray);
+    margin-left: 10%;
+    margin-right: 10%;
+    /* margin-top: auto; */
+    display: grid;
+    /* height: 95vh; */
+}

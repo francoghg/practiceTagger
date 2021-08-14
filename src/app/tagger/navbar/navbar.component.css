@@ -1,0 +1,35 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    background-color: var(--darkgray);
+    max-height: 5em;
+
+  }
+  img {
+    margin-left:0%;
+    margin-right:0%;
+    max-height: 4em;
+    max-width: auto;
+    float: left;
+    }
+  
+  li {
+    float: left;
+    height: 100%;
+  }
+  
+  li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 1.25em;
+    text-decoration: none;
+    transition: linear 250ms;
+  }
+  
+  li a:hover, .dropdown:hover .dropbtn {
+    background-color: var(--gray);
+  }
+  

@@ -1,0 +1,122 @@
+<div class="company">
+    <mat-button-toggle-group *ngIf="this.companyService.getCompany().type==='super'">
+        <mat-button-toggle (click)="changeMode('ver')">Ver Empresas</mat-button-toggle>
+        <mat-button-toggle (click)="changeMode('editar')">Editar Empresas</mat-button-toggle>
+    </mat-button-toggle-group>
+    
+    
+    <mat-grid-list cols="1" rowHeight="10em">
+            <!-- Vista admin normal (1) -->
+        <mat-grid-tile *ngIf="user.type===1">
+            {{this.companyService.getCompany().name}}
+        </mat-grid-tile>
+    
+        <mat-grid-tile *ngIf="user.type===1">
+            <button mat-raised-button class="add">Cambiar Nombre</button>
+        </mat-grid-tile>
+    
+            <!-- Vista de Admin Graiph (0)-->
+        <mat-grid-tile *ngIf="user.type===0">
+            <div *ngIf="this.companyService.getMode()==='ver';then ver1">
+            </div>
+            <div *ngIf="this.companyService.getMode()==='editar';then editar1">
+            </div>
+            <div *ngIf="this.companyService.getMode()!=='editar'&&this.companyService.getMode()!=='ver'">
+                Default
+            </div>
+    
+        </mat-grid-tile>  
+    
+    </mat-grid-list>
+
+    <mat-grid-list cols="1" rowHeight="30em" *ngIf="this.companyService.getActive()">
+            <mat-grid-tile>
+                <div *ngIf="this.companyService.getMode()==='ver';then ver2">
+                </div>
+                <div *ngIf="this.companyService.getMode()==='editar';then editar2">
+                </div>
+            </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+
+<ng-template #ver1>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Empresa</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let company of this.companyService.getCompanies()" [value]="company.name" (click)="this.companyService.setActive(company)">
+                {{company.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+    </div> 
+</ng-template>
+
+<ng-template #ver2>
+    <div *ngIf="this.companyService.getActive()">
+        <div>
+            Nombre:{{this.companyService.getActive().name}}
+        </div>
+        <div>
+            Rut:{{this.companyService.getActive().rut}}
+        </div>
+        <div>
+            Inicio Contrato:{{this.companyService.getActive().contractInit}}
+        </div>
+        <div>
+            Fin Contrato:{{this.companyService.getActive().contractEnd}}
+        </div>
+    </div>
+</ng-template>
+
+
+
+
+<ng-template #editar1>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Empresa</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let company of this.companyService.getCompanies()" [value]="company.name" (click)="this.companyService.setActive(company)">
+                {{company.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+    </div> 
+</ng-template>
+
+<ng-template #editar2>
+
+    <form (ngSubmit)="editCompany(companyForm)"
+        #companyForm="ngForm" *ngIf="this.companyService.getActive()">
+        <div>
+            <mat-form-field>
+                <mat-label>{{this.companyService.getActive().name}}</mat-label>
+                <input matInput 
+                    placeholder="Nombre" 
+                    ngModel
+                    name="name"
+                    required
+                    >
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>{{this.companyService.getActive().rut}}</mat-label>
+                <input matInput 
+                        placeholder="99.999.999-9"
+                        name="rut"
+                        ngModel
+                        required>
+            </mat-form-field>
+        </div>
+        <div>
+        </div>
+        <button mat-raised-button color='primary' type="submit">
+            Guardar Cambios
+        </button>
+    </form>
+</ng-template>

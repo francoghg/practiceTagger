@@ -1,0 +1,11 @@
+
+    <div id="button-exports" class="btn-container">
+        
+        <input id="csv-input" class="image_input" #csv accept=".csv" type="file" (change)="loadCSV(csv.files)">
+        <label for="csv-input" style="margin-left: 1em;margin-top: 0.5em;" title="Importa un archivo .csv desde su dispositivo">Importar datos</label>
+
+        <br>
+
+        <button class="btn export" (click)='exportData()' title="Exportar datos de clases en formato .csv">Exportar datos</button>
+
+    </div>

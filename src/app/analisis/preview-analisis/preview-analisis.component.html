@@ -1,0 +1,385 @@
+<br>
+<div class="container">
+    <h1>Vista previa</h1>
+    <!-- <div class="loader"></div> -->
+</div>
+
+<br>
+
+  <!-- <mat-button-toggle-group class="yolo" id="previewButtons">
+    <div *ngFor="let item of this.importSerive.anaList">
+      <mat-button-toggle class="btnt" (click)="showTable(item.nombre)">{{item.nombre}}</mat-button-toggle>
+    </div>
+    </mat-button-toggle-group> -->
+
+<div class="flex">
+    <div id="previewButtons" *ngFor="let item of this.importSerive.anaList">
+        <button class="inactive-button" (click)="showTable(item.nombre)">{{item.nombre}}</button>
+    </div>
+</div>
+<div id="tables" class="dataPreview">
+
+    <div id="Geotecnia" *ngIf="dataSource.length>0;else Generalempty" class="tableContainer" style="display: block;"> 
+          <!--Tabla analisis general-->
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!-- Core Column -->
+            <ng-container matColumnDef="core">
+              <th mat-header-cell *matHeaderCellDef> Sondaje </th>
+              <td mat-cell *matCellDef="let element"> {{element.core}} </td>
+            </ng-container>
+          
+            <!-- Start Column -->
+            <ng-container matColumnDef="start">
+              <th mat-header-cell *matHeaderCellDef> Inicio </th>
+              <td mat-cell *matCellDef="let element"> {{element.start}} </td>
+            </ng-container>
+          
+            <!-- End Column -->
+            <ng-container matColumnDef="end">
+              <th mat-header-cell *matHeaderCellDef> Fin </th>
+              <td mat-cell *matCellDef="let element"> {{element.end}} </td>
+            </ng-container>
+          
+            <!-- Segs Column -->
+            <ng-container matColumnDef="segs">
+              <th mat-header-cell *matHeaderCellDef> Segs </th>
+              <td mat-cell *matCellDef="let element"> {{element.segs}} </td>
+            </ng-container>
+
+             <!-- Segs Column -->
+             <ng-container matColumnDef="esp">
+              <th mat-header-cell *matHeaderCellDef> Esp </th>
+              <td mat-cell *matCellDef="let element"> {{element.esp}} </td>
+            </ng-container>
+
+             <!-- Segs Column -->
+             <ng-container matColumnDef="ff">
+              <th mat-header-cell *matHeaderCellDef> FF </th>
+              <td mat-cell *matCellDef="let element"> {{element.ff}} </td>
+            </ng-container>
+
+             <!-- Segs Column -->
+             <ng-container matColumnDef="m">
+              <th mat-header-cell *matHeaderCellDef> M </th>
+              <td mat-cell *matCellDef="let element"> {{element.m}} </td>
+            </ng-container>
+
+             <!-- Segs Column -->
+             <ng-container matColumnDef="mf">
+              <th mat-header-cell *matHeaderCellDef> MFino </th>
+              <td mat-cell *matCellDef="let element"> {{element.mf}} </td>
+            </ng-container>
+
+             <!-- Segs Column -->
+             <ng-container matColumnDef="mm">
+              <th mat-header-cell *matHeaderCellDef> MMedio </th>
+              <td mat-cell *matCellDef="let element"> {{element.mm}} </td>
+            </ng-container>
+
+             <!-- Segs Column -->
+             <ng-container matColumnDef="mg">
+              <th mat-header-cell *matHeaderCellDef> MGrueso </th>
+              <td mat-cell *matCellDef="let element"> {{element.mg}} </td>
+            </ng-container>
+
+             <!-- Segs Column -->
+             <ng-container matColumnDef="rqd">
+              <th mat-header-cell *matHeaderCellDef> RQD </th>
+              <td mat-cell *matCellDef="let element"> {{element.rqd}} </td>
+            </ng-container>
+
+             <!-- Segs Column -->
+             <ng-container matColumnDef="rec">
+              <th mat-header-cell *matHeaderCellDef> Rec </th>
+              <td mat-cell *matCellDef="let element"> {{element.rec}} </td>
+            </ng-container>
+
+             <!-- Segs Column -->
+             <ng-container matColumnDef="size">
+              <th mat-header-cell *matHeaderCellDef> Size </th>
+              <td mat-cell *matCellDef="let element"> {{element.size}} </td>
+            </ng-container>
+
+             <!-- Segs Column -->
+             <ng-container matColumnDef="frac">
+              <th mat-header-cell *matHeaderCellDef> Frac </th>
+              <td mat-cell *matCellDef="let element"> {{element.frac}} </td>
+            </ng-container>
+
+             <!-- Segs Column -->
+             <ng-container matColumnDef="lens">
+              <th mat-header-cell *matHeaderCellDef> LenS </th>
+              <td mat-cell *matCellDef="let element"> {{element.lenS}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky:true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+
+    <div id="Molidos" *ngIf="dataMolido.length>0;else Molidoempty" class="tableContainer">
+      <!-- Tabla analisis molido -->
+      <table mat-table [dataSource]="dataMolido" class="mat-elevation-z8">
+
+        <!-- Core Column -->
+        <ng-container matColumnDef="core">
+          <th mat-header-cell *matHeaderCellDef> Sondaje </th>
+          <td mat-cell *matCellDef="let element"> {{element.core}} </td>
+        </ng-container>
+        <!-- From Column -->
+        <ng-container matColumnDef="from">
+          <th mat-header-cell *matHeaderCellDef> Desde </th>
+          <td mat-cell *matCellDef="let element"> {{element.from}} </td>
+        </ng-container>
+        <!-- To Column -->
+        <ng-container matColumnDef="to">
+          <th mat-header-cell *matHeaderCellDef> Hasta </th>
+          <td mat-cell *matCellDef="let element"> {{element.to}} </td>
+        </ng-container>
+        <!-- Class Column -->
+        <ng-container matColumnDef="class">
+          <th mat-header-cell *matHeaderCellDef> Clase </th>
+          <td mat-cell *matCellDef="let element"> {{element.class}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="molidoColumns;sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: molidoColumns;"></tr>
+      </table>
+    </div>
+
+
+    <div id="Fracturas" *ngIf="dataAng.length>0;else Fracturasempty" class="tableContainer">
+      <!-- Tabla analisis fracturas -->
+      <table mat-table [dataSource]="dataAng" class="mat-elevation-z8">
+
+        <!-- Core Column -->
+        <ng-container matColumnDef="core">
+          <th mat-header-cell *matHeaderCellDef> Sondaje </th>
+          <td mat-cell *matCellDef="let element"> {{element.core}} </td>
+        </ng-container>
+        <!-- From Column -->
+        <ng-container matColumnDef="depth">
+          <th mat-header-cell *matHeaderCellDef> Profundidad </th>
+          <td mat-cell *matCellDef="let element"> {{element.depth}} </td>
+        </ng-container>
+        <!-- To Column -->
+        <ng-container matColumnDef="alpha">
+          <th mat-header-cell *matHeaderCellDef> Alfa </th>
+          <td mat-cell *matCellDef="let element"> {{element.alpha}} </td>
+        </ng-container>
+        <!-- Class Column -->
+        <ng-container matColumnDef="beta">
+          <th mat-header-cell *matHeaderCellDef> Beta </th>
+          <td mat-cell *matCellDef="let element"> {{element.beta}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="fracturaColumns;sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: fracturaColumns;"></tr>
+      </table>
+    </div>
+
+    <div id="Vetillas" *ngIf="dataVet.length>0;else Vetillasempty" class="tableContainer">
+      <!-- Tabla analisis vetillas -->
+      <table mat-table [dataSource]="dataVet" class="mat-elevation-z8">
+
+        <!-- Core Column -->
+        <ng-container matColumnDef="core">
+          <th mat-header-cell *matHeaderCellDef> Sondaje </th>
+          <td mat-cell *matCellDef="let element"> {{element.core}} </td>
+        </ng-container>
+        <!-- From Column -->
+        <ng-container matColumnDef="depth">
+          <th mat-header-cell *matHeaderCellDef> Profundidad </th>
+          <td mat-cell *matCellDef="let element"> {{element.depth}} </td>
+        </ng-container>
+        <!-- To Column -->
+        <ng-container matColumnDef="alpha">
+          <th mat-header-cell *matHeaderCellDef> Alfa </th>
+          <td mat-cell *matCellDef="let element"> {{element.alpha}} </td>
+        </ng-container>
+        <!-- Class Column -->
+        <ng-container matColumnDef="beta">
+          <th mat-header-cell *matHeaderCellDef> Beta </th>
+          <td mat-cell *matCellDef="let element"> {{element.beta}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="vetillaColumns;sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: vetillaColumns;"></tr>
+      </table>
+    </div>
+
+    <div id="Litología" *ngIf="dataLito.length>0;else Litologiaempty" class="tableContainer">
+      <!-- Tabla analisis molido -->
+      <table mat-table [dataSource]="dataLito" class="mat-elevation-z8">
+        <!-- core Column -->
+        <ng-container matColumnDef="core">
+         <th mat-header-cell *matHeaderCellDef> Sondaje </th>
+         <td mat-cell *matCellDef="let element"> {{element.core}} </td>
+       </ng-container>
+        <!-- from Column -->
+        <ng-container matColumnDef="from">
+          <th mat-header-cell *matHeaderCellDef> Desde </th>
+          <td mat-cell *matCellDef="let element"> {{element.from}} </td>
+        </ng-container>
+         <!-- to Column -->
+         <ng-container matColumnDef="to">
+          <th mat-header-cell *matHeaderCellDef> Hasta </th>
+          <td mat-cell *matCellDef="let element"> {{element.to}} </td>
+        </ng-container>
+         <!-- lito Column -->
+         <ng-container matColumnDef="lito">
+          <th mat-header-cell *matHeaderCellDef> Litología </th>
+          <td mat-cell *matCellDef="let element"> {{element.lito}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="litoColumns;sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: litoColumns;"></tr>
+      </table>
+    </div>
+
+    <div id="Alteración" *ngIf="dataAlt.length>0;else Alteracionempty" class="tableContainer">
+      <!-- Tabla analisis molido -->
+      <table mat-table [dataSource]="dataAlt" class="mat-elevation-z8">
+
+        <!-- core Column -->
+        <ng-container matColumnDef="core">
+         <th mat-header-cell *matHeaderCellDef> Sondaje </th>
+         <td mat-cell *matCellDef="let element"> {{element.core}} </td>
+       </ng-container>
+        <!-- from Column -->
+        <ng-container matColumnDef="from">
+          <th mat-header-cell *matHeaderCellDef> Desde </th>
+          <td mat-cell *matCellDef="let element"> {{element.from}} </td>
+        </ng-container>
+         <!-- to Column -->
+         <ng-container matColumnDef="to">
+          <th mat-header-cell *matHeaderCellDef> Hasta </th>
+          <td mat-cell *matCellDef="let element"> {{element.to}} </td>
+        </ng-container>
+         <!-- alt Column -->
+         <ng-container matColumnDef="alt">
+          <th mat-header-cell *matHeaderCellDef> Alteración </th>
+          <td mat-cell *matCellDef="let element"> {{element.alt}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="alterColumns;sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: alterColumns;"></tr>
+      </table>
+    </div>
+
+    <div id="Mineralización" *ngIf="dataMin.length>0;else Mineralizacionempty" class="tableContainer">
+      <!-- Tabla analisis molido -->
+      <table mat-table [dataSource]="dataMin" class="mat-elevation-z8">
+
+        <!-- core Column -->
+        <ng-container matColumnDef="core">
+         <th mat-header-cell *matHeaderCellDef> Sondaje </th>
+         <td mat-cell *matCellDef="let element"> {{element.core}} </td>
+       </ng-container>
+        <!-- from Column -->
+        <ng-container matColumnDef="from">
+          <th mat-header-cell *matHeaderCellDef> Desde </th>
+          <td mat-cell *matCellDef="let element"> {{element.from}} </td>
+        </ng-container>
+         <!-- to Column -->
+         <ng-container matColumnDef="to">
+          <th mat-header-cell *matHeaderCellDef> Hasta </th>
+          <td mat-cell *matCellDef="let element"> {{element.to}} </td>
+        </ng-container>
+         <!-- min Column -->
+         <ng-container matColumnDef="min">
+          <th mat-header-cell *matHeaderCellDef> Mineralización </th>
+          <td mat-cell *matCellDef="let element"> {{element.min}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="minerColumns;sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: minerColumns;"></tr>
+      </table>
+    </div>
+
+    <div id="Observación" *ngIf="dataObs.length>0;else Observacionempty" class="tableContainer">
+      <!-- Tabla analisis molido -->
+      <table mat-table [dataSource]="dataObs" class="mat-elevation-z8">
+
+        <!-- core Column -->
+        <ng-container matColumnDef="core">
+         <th mat-header-cell *matHeaderCellDef> Sondaje </th>
+         <td mat-cell *matCellDef="let element"> {{element.core}} </td>
+       </ng-container>
+        <!-- from Column -->
+        <ng-container matColumnDef="from">
+          <th mat-header-cell *matHeaderCellDef> Desde </th>
+          <td mat-cell *matCellDef="let element"> {{element.from}} </td>
+        </ng-container>
+         <!-- to Column -->
+         <ng-container matColumnDef="to">
+          <th mat-header-cell *matHeaderCellDef> Hasta </th>
+          <td mat-cell *matCellDef="let element"> {{element.to}} </td>
+        </ng-container>
+         <!-- obs Column -->
+         <ng-container matColumnDef="obs">
+          <th mat-header-cell *matHeaderCellDef> Observación </th>
+          <td mat-cell *matCellDef="let element"> {{element.obs}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="obsColumns;sticky:true"></tr>
+        <tr mat-row *matRowDef="let row; columns: obsColumns;"></tr>
+      </table>
+    </div>
+
+
+    
+    <ng-template #Generalempty>
+      <div id="Geotecnia" class="message" style="display: block;">
+        <h1 style="text-align: center;">Nada que mostrar</h1>
+      </div>
+    </ng-template>
+
+    <ng-template #Molidoempty>
+      <div id="Molidos" class="message">
+        <h1 style="text-align: center;">Nada que mostrar</h1>
+      </div>
+    </ng-template>
+
+    <ng-template #Fracturasempty>
+      <div id="Fracturas" class="message">
+        <h1 style="text-align: center;">Nada que mostrar</h1>
+      </div>
+    </ng-template>
+
+    <ng-template #Vetillasempty>
+      <div id="Vetillas" class="message">
+        <h1 style="text-align: center;">Nada que mostrar</h1>
+      </div>
+    </ng-template>
+
+    <ng-template #Litologiaempty>
+      <div id="Litología" class="message">
+        <h1 style="text-align: center;">Nada que mostrar</h1>
+      </div>
+    </ng-template>
+
+    <ng-template #Alteracionempty>
+      <div id="Alteración" class="message">
+        <h1 style="text-align: center;">Nada que mostrar</h1>
+      </div>
+    </ng-template>
+
+    <ng-template #Mineralizacionempty>
+      <div id="Mineralización" class="message">
+        <h1 style="text-align: center;">Nada que mostrar</h1>
+      </div>
+    </ng-template>
+    
+
+    <ng-template #Observacionempty>
+      <div id="Observación" class="message">
+        <h1 style="text-align: center;">Nada que mostrar</h1>
+      </div>
+    </ng-template>
+
+    
+</div>
+
+<br>

@@ -1,0 +1,27 @@
+
+.company{
+    height: 100%;
+    width: 100%;
+}
+mat-grid-tile{
+    text-align: center;
+}
+.add{
+    color: var(--black);
+    background-color: var(--green);
+}
+mat-button-toggle-group{
+    width: 100%;
+    border-style: solid;
+}
+mat-button-toggle{
+    width: 100%;
+    background-color: var(--orange);
+    color: var(--white);
+}
+mat-grid-list{
+
+    background-color: var(--lightgray);
+    width: 75%;
+    margin-left: 12%;
+}

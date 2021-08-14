@@ -1,0 +1,60 @@
+<body>
+    
+
+
+    <div class="grid">
+        
+        
+        <div class="image-container">
+            <img class="image" src="/assets/images/logograiph.png" alt="logograiph">
+        </div>
+        
+        <div class="login-container">
+            <form (ngSubmit)="guardar(logInForm)"
+                    #logInForm="ngForm">
+
+                <mat-grid-list cols="1" rowHeight="4em">  
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label> Dirección de correo</mat-label>
+                            <input matInput 
+                                    placeholder="Correo"
+                                    ngModel
+                                    name="user"
+                                    required>
+                        </mat-form-field>
+                    </mat-grid-tile>              
+    
+                    <mat-grid-tile >
+                        <mat-form-field>
+                            <mat-label>Ingrese contraseña</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'"
+                                placeholder="Contraseña"
+                                ngModel
+                                name="pass"
+                                required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+    
+                    <mat-grid-tile>                    
+                        <button mat-raised-button color='primary' type="submit">
+                            LogIn
+                        </button>
+            
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </form>
+            
+            
+        </div>
+
+        
+
+    </div>
+    
+    
+</body>

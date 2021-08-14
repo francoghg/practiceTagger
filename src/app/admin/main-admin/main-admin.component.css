@@ -1,0 +1,13 @@
+mat-sidenav-container{
+ height: 100%;
+ 
+}
+
+
+mat-sidenav-content{
+
+    background-image: url("src\assets\images\pattern1.jpg");    
+    background-size: 10%;
+    
+    background-color: var(--lightgray);
+}

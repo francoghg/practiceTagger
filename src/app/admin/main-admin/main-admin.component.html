@@ -1,0 +1,14 @@
+<body>
+    <app-navbar></app-navbar>
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" opened>
+            <app-sidemenu-admin></app-sidemenu-admin>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div *ngIf="this.sideService.getState()==='home'"> Home Content</div>
+            <app-company-admin *ngIf="this.sideService.getState()==='company'"></app-company-admin>
+            <app-drilling-admin *ngIf="this.sideService.getState()==='drilling'"></app-drilling-admin>
+            <app-user-admin *ngIf="this.sideService.getState()==='user'"></app-user-admin>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</body>

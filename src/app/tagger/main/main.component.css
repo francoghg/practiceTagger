@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+@import url(https://fonts.googleapis.com/css?family=Finger+Paint);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+
+body{
+    min-height: max-content;
+    min-width: 100%;
+    /* background-color: green; */
+}
+
+.container{
+    display:grid;
+    min-width: 100%;
+    padding: 0;
+}
+
+.even-columns{
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+}
+app-navbar{
+    z-index: 10;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+}
+.even-columns>*:nth-child(1){
+    flex: 1 1 10%;
+    min-width: 15em;
+    max-width: 20em;
+    margin-right: -50px;
+    /* background-color: blueviolet; */
+}
+
+.even-columns>*:nth-child(2){
+    margin-left: 2em;
+    flex: 1 1 90%;
+    position: relative;
+    /* background-color: blue; */
+    
+}
+
+
+img {
+    width: 1400px;
+}
+.drawBox{
+    position: relative;
+    z-index: 2;    
+    width: 1400px;
+    transform-origin:0% 0%;
+
+}
+.imageBox{
+    position: relative;
+    z-index: 1;
+    width: 1400px;    
+    transform-origin:0% 0%;
+    
+}
+
+.sideBar{
+    z-index: 3;
+}
+
+.draw-container{
+    margin-top: 2em;
+    margin-left: 5em;
+    transform-origin:0% 0%;
+    max-width: 1418px;
+    max-height: 800px;
+    width: 10px;
+}
+
+.img-magnifier-glass {
+    position: relative;    
+    z-index: 4;    
+    transform-origin:0% 0%;
+    border: 3px solid var(--orange);
+    border-radius: 1em;    
+    cursor: default;
+    /*Set the size of the magnifier glass:*/
+    width: 100px;
+    height: 100px;
+  }
+

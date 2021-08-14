@@ -1,0 +1,19 @@
+<div>
+<label class="labe" for="selectFeature">Clusterizar según:&nbsp;</label>
+<select name="selectFeature" [(ngModel)]="selectedFeature"  (change)="selectFeature($event.target.value)">
+    <option *ngFor="let feature of features" value={{feature.name}}>
+    {{feature.showName}}
+    </option>
+</select>
+<select name="selectFeature">
+    <option></option>
+    <option>Granito</option>
+    <option>Toba</option>
+    <option>Andesita</option>
+</select>
+</div>
+
+<div>    
+    <input class="image_input">
+    <label for="test-input" style="margin-left: 1em;margin-top: 0.5em; text-align: center;" title="Importa un archivo .csv desde su dispositivo">Clusterizar</label>
+</div>

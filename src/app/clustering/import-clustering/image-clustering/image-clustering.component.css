@@ -1,0 +1,111 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+.title{
+    padding-left: 10px;
+    color: var(--white);
+    font-family: myFont;
+    margin-right: auto;
+    margin-left: 1em;
+    margin-top: 0.5em;
+    cursor: pointer;
+    transition: 250ms ease-in;
+
+}
+.title:hover{
+    color: var(--lightgray);
+    background-color: var(--gray);
+}
+
+.imageContainer {
+    height: 150px;
+    background-color: var(--darkwhite);
+    border-color:var(--orange);
+    border-radius: 10%;
+    border-style: solid;
+    max-width: 180px;
+    display: block;
+    overflow-y: auto;    
+    margin-left: 1em;
+    margin-bottom: 1em;
+
+}
+.imageContainer li{
+    color: var(--lightblack);    
+    font-size: small;
+    padding-left: 0px;
+    margin-left: 3px;    
+    font-family: myFont;
+
+}
+
+.imageContainer .imageActive, .list:hover{
+    color: var(--purple);
+    font-weight: 800;
+    cursor: pointer;    
+}
+
+
+.alert{
+    display: none;
+    background-color: var(--lightorange);
+    color: var(--black);
+    margin-left: 1em;
+    border-radius: 5%;
+    font-size: small;
+    margin-right: 1em;
+}
+
+.flexButtons{
+    display: flex; 
+    border: solid var(--lightblack);   
+    width: fit-content;
+    margin: 1em;
+}
+
+.flexButtons >*{
+    border: none;
+    color: black;
+    background-color: var(--lightpink);
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    border: solid var(--darkwhite);
+}
+.flexButtons >*:hover{
+    background: var(--orange);
+}
+
+
+.btn{
+    background-color: var(--lightorange);       
+    padding: 1em;
+    border: solid var(--lightorange);
+    /* border-radius: 1em; */
+    transition: all 500ms ease;  
+    font-family: myFont;
+}
+
+.btn:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+
+
+
+.button-container{
+    margin-left: 1em;
+}
+
+.export{
+    background-color: var(--lightgreen);
+    border-color: var(--lightgreen);
+    margin-left: 1em;
+}
+
+.export:hover{
+    background-color: var(--green);
+    border-color: var(--green);
+}

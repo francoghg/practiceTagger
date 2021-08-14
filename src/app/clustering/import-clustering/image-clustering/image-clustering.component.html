@@ -1,0 +1,11 @@
+<div id="button-loads" class="button-container">
+    <input id="image-input" class="image_input" #files type="file" accept='image/*' (change)="preview(files.files)" multiple/>
+    <label for="image-input" title="Carga una o varias imágenes desde su dispositivo.">Subir imágenes</label>
+    <button class="btn" id="btnEliminar" (click)="changeDisplay('alert1')">Eliminar imagen</button>
+</div>
+
+<div id="image-show" class="imageContainer">   
+    <ul id="imageheaderid">
+        <li id={{item.name}} class="list" *ngFor="let item of imageClusteringService.images" (click)="imageSelect(item.name)" title="{{item.name}}">{{item.name}}</li>
+    </ul>
+</div>

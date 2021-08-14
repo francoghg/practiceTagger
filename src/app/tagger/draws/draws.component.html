@@ -1,0 +1,123 @@
+<link rel="stylesheet" href="https://vectorjs.org/library.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<!-- <div class="classContainer"> -->
+<div class="container">  
+    <!-- <ul id="classheaderid">
+        <li class="lista" *ngFor="let item of draswService.clases" (click)="classSelector(item.name)">{{item.name}}</li>
+    </ul>   -->
+    <div class="mainBlock">
+        <br>
+        <div class="block" style="text-align: right;">
+            Editar
+        </div>
+        
+        <div class="block">
+            <label class="switch">
+                <input id="toggle-class"type="checkbox" (click)="toggleCreate()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="block" style="text-align: left;">&nbsp;&nbsp;Crear</div>
+        
+    </div> 
+
+    <br>
+    <br>
+
+    <div class="class-container">
+            <div *ngFor="let categoria of categories">
+                <h5 (click)="changeActiveUpClass(categoria.id)">{{categoria.nombre}}</h5>
+
+                <div id="{{categoria.id}}" class="simpleContainer" style="display: none;">
+                    <div *ngFor="let clase of draswService.clases">
+                        <div class="{{clase.upClass}}" *ngIf="clase.upClass===categoria.upClass">
+    
+                            <input id="{{clase.name}}" (click)="toggleClassView(clase.name)" type="checkbox" class="eye" checked>
+                            <label for="c1"></label>
+                    
+                            <input id="{{clase.name}}" type="radio" name="radio" value="clase.name" (click)="classSelector(clase.name)">
+                            <label class="class_name">{{clase.showName}}</label>
+                            <img src="/assets/icons/{{clase.icon}}" alt="" style="float: right; max-height: 1em; max-width: 1em;">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>  
+    </div>
+
+
+    
+
+</div>
+<!-- Crear/Eliminar clase -->
+
+
+<!-- Eleccion entre tipo de figura para crear -->
+<div id="shape-selector" style="display: none;">
+    <button class="active-button" id="boxselector" (click)="show1('class-creation','line-creation','boxselector', 'lineselector')" >Box</button>
+    <button class="inactive-button" id="lineselector" (click)="show1('line-creation', 'class-creation', 'lineselector','boxselector')">Line</button>
+</div>
+
+
+<div style="display: block;">
+    <br>   
+    <!-- Form para crear la figura / editar atributos-->
+    <div id="shape-management" style="display: none;">
+        <button class="active-button" id="shape-creator" (click)="show1('class_cretion_container','class-edit-container','shape-creator', 'shape-editor')" >Crear</button>
+        <!-- <button class="inactive-button" id="shape-editor" (click)="show1('class-edit-container', 'class_cretion_container', 'shape-editor','shape-creator')">Editar</button> -->
+    </div>
+
+    <div id="class_cretion_container" class="class_creation"  style="display: none;">
+        <h4 style="text-align: center; overflow: hidden;">{{this.draswService.clase.showName}}</h4>
+        <div id="atribute_window"></div>
+        
+
+        <!-- <button class="shapecreate" (click)='crearForma()' title="Crea una forma a partir de la clase seleccionada.">Crear forma</button> -->
+    </div>
+
+
+    <!-- <div id="class-edit-container" class="class_creation" style="display: none;">
+        <div class="box">
+            <select id="id-selector" >
+                <option>ID</option>
+                <option class="opt" *ngFor="let item of draswService.activesShapes" (click)="showEditForm(item)">{{item.id}}</option>
+            </select>
+        </div>
+
+        <div  id="shape-edit-container">            
+        </div>
+        
+        <button id="uptade-btn" class="btn" style="display: none; margin-left: 1em;" (click)="updateShape('shape-edit-container')">Actualizar</button>
+
+    </div> -->
+
+      <!-- Creacion de clase -->
+    <div class="btn-container" style="display: none;">
+    
+
+        <input id="csvClass-input" class="image_input" #csvClass accept=".csv" type="file" (change)="loadCsvClass(csvClass.files)">
+        <label for="csvClass-input" style="margin-left: 1em;margin-top: 0.5em;" title="Importa un archivo .csv desde su dispositivo">Importar clases</label>
+        <!-- <button class="btn" (click)="mostrar('shape-selector')" title="Crear una nueva clase.">Crear</button>
+        <button class="btn delete" (click)="mostrarDeleteAlert('classDeleteid')" title="Eliminar clase seleccionada.">Eliminar</button> -->
+    
+    </div>
+    
+    <!-- Confirmar eliminar clase -->
+    <div *ngIf="this.show" class="classDelete" id="classDeleteid" style="display: none;">
+        Se eliminará <strong>{{this.draswService.clase.name}}</strong>.
+        ¿Desea continuar?
+        <div>
+            <button class="material-icons"(click)="confirmDelete('classDeleteid')" title="Eliminar clase.">check</button>
+            <button class="material-icons" (click)="cancelDelete('classDeleteid')" title="Cancelar eliminación.">clear</button> 
+        </div>
+    </div>
+    <!-- div auxiliar para obtener valores -->
+    <div style="display: none;">
+        <textarea id="oriX">100</textarea>        
+        <textarea id="oriY">100</textarea>
+    </div>
+</div>
+

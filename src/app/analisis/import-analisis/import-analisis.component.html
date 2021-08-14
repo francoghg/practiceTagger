@@ -1,0 +1,91 @@
+<br>
+<div class="container">
+    <h1>Análisis</h1>
+</div>
+
+<br>
+
+<div class="container">    
+    <input id="test-input" class="image_input" #csv2 accept=".csv" type="file" (change)="load(csv2.files)">
+    <label for="test-input" style="margin-left: 1em;margin-top: 0.5em; text-align: center;" title="Importa un archivo .csv desde su dispositivo">Subir archivo</label>
+    <label class="labe">{{file}}</label>
+</div>
+
+<br>
+
+<div class="container">
+    <button class="btn" (click)="reviewProcess()">
+        Revisar datos
+    </button>
+</div>
+
+<br>
+
+<p id="myNotestitle" class="labe" style="display: none;">Revisión:</p>
+<div id="myNotes" class="notecontainer" style="display: none;">
+    <div class="notecontainer-edge">
+        <div *ngFor="let item of this.importService.reviewData">
+            <div *ngIf="item.clas === 'False'; else continue">
+                <img class="imagereview" src="/assets/review/stop.png" alt="" style="max-height: 1.5em; max-width: 1.5em;">
+                {{item.note}}
+            </div>
+            <ng-template #continue>
+                <img class="imagereview" src="/assets/review/warning.png" alt="" style="max-height: 1.5em; max-width: 1.5em;">
+                {{item.note}}
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="myReview" class="container" style="display: none;">
+    <br>
+    <div *ngIf="this.importService.reviewReady === 'False'; else continueAnalisis">
+        <center><img src="/assets/review/reviewNotReady.png" alt="" style="max-height: 5em; max-width: 5em;"><br></center>
+        <p class="labe">Su archivo contiene errores.<br>Resuélvalos y vuelva a intentarlo</p>
+    </div>
+    <ng-template #continueAnalisis>
+        <center><img src="/assets/review/reviewReady.png" alt="" style="max-height: 5em; max-width: 5em;"><br></center>
+        <p class="labe">Su archivo está correcto.<br>Puede continuar con el Análisis</p>
+    </ng-template>
+<br>
+</div>
+
+
+
+<div class="container">
+    <form class="labe">
+        <p>Nombre Sondaje:<br>
+            <input type="text" name="setCorename" (change)="setCorename($event.target.value)">
+        </p>
+    </form>
+</div>
+
+<div id="idCheck"  class="flex">
+    <p class="labe">Obtener:</p>
+    <div class="newcol" *ngFor="let item of this.importService.anaList">
+        <input type="checkbox" id={{item.estado}}>
+        <label>{{item.nombre}}</label>
+    </div>
+</div>
+
+<!--
+<div class="container">
+    <form class="labe">
+        <p>Escala:&nbsp;
+            <input type="number" name="setRatio" pattern="^\d*(\.\d{0,2})?$" min="0" step=".01" size="40" (change)="setRatio($event.target.value)">
+            &nbsp;(m)
+        </p>
+    </form>
+</div>
+-->
+
+<br>
+
+<div class="container">
+    <button class="btn" (click)="process()">
+        Procesar datos
+    </button>
+</div>
+<br>

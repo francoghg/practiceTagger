@@ -1,0 +1,16 @@
+
+.container{
+    background-color: var(--darkgray);
+    height: 100%;
+}
+
+mat-button-toggle{
+    background-color: var(--darkgray);
+    color: var(--white);
+    font-family: myFont;
+
+}
+
+
+
+

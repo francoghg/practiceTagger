@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="main.component.css">
+<body>
+        <div class="container">
+            <app-navbar></app-navbar>
+            <div class="even-columns">
+                <app-sidebar></app-sidebar>
+                <div>
+                    <div id="draw_container_id" class="draw-container" (click)="this.drawsService.shapeEvent()"> 
+                        <div id="my-interactive" class="drawBox"></div>
+                        <div  id="image-box" class="imageBox">
+                            <img id="image"  [src]="imageService.img.imgURL">                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+</body>
+
+    
+    
+    
+   
+

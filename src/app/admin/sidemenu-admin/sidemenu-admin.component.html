@@ -1,0 +1,8 @@
+<div class="container">
+    <mat-button-toggle-group vertical=true #group="matButtonToggleGroup">
+        <mat-button-toggle (click)="setView(group.value)" value="home" checked >Home</mat-button-toggle>
+        <mat-button-toggle (click)="setView(group.value)" value="company">Compañía</mat-button-toggle>
+        <mat-button-toggle (click)="setView(group.value)" value="user">Usuarios</mat-button-toggle>
+        <mat-button-toggle (click)="setView(group.value)" value="drilling">Sondajes</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>

@@ -1,0 +1,54 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div>
+    <p class="title" (click)="hideShowSection('button-loads')">Cargar</p>
+    <div id="button-loads" class="button-container" style="display: none;">
+
+        <input id="image-input" class="image_input" #files type="file" accept='image/*' (change)="preview(files.files)" multiple/>
+        <label for="image-input" title="Carga una o varias imágenes desde su dispositivo.">Imágenes</label>
+        <br>
+        <input id="folder-input" class="image_input" #file type="file" accept='image/*' (change)="preview(file.files)" webkitdirectory multiple/>
+        <label for="folder-input" title="Carga una o varias imágenes desde su dispositivo.">Carpeta de Imágenes</label>
+
+    </div>
+</div>
+
+<span *ngIf="message">{{message}}</span>
+<p class="title" (click)="hideShowSection('image-show')">Imágenes cargadas</p>
+<div id="image-show" style="display: none;">
+    
+    <div class="imageContainer">
+    <ul id="imageheaderid">
+        <li id={{item.name}} class="list" *ngFor="let item of imageService.images" (click)="imageSelect(item.name)" title="{{item.name}}">{{item.name}}</li>
+    </ul>
+    </div>
+    
+    <div class="button-container">
+        <button class="btn" id="btnEliminar" (click)="changeDisplay('alert1')">Eliminar Imagen</button>
+    </div>
+
+</div>
+
+
+
+<div id="image-show">
+    <div id="alert1" class="alert" style="display: none;">
+        <a>
+            <strong>Atención</strong>&nbsp;¿Está seguro que desea eliminar {{imageService.img.name}}?
+        </a>
+        <div class="flexButtons">
+            <button class="material-icons" (click)="eliminar()">
+                check
+            </button>
+            <button class="material-icons" (click)="changeDisplay('alert1')">clear</button>
+            
+        </div>
+    </div>
+    
+    <div id="temporal-interactive" style="display: none;"></div>
+</div>
+
+
+
+<!-- <input id="image_input" #file type="file" accept='image/*' style="display: none;" /> -->
+<!-- <button class="btn_add" (click)="loadImages()">Cargar imagen</button> -->

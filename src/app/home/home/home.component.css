@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+@import url(https://fonts.googleapis.com/css?family=Finger+Paint);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+.image-container{    
+    background-image: linear-gradient(to right, var(--green), var(--blue));
+    margin-bottom: 5em;
+
+}
+
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    
+}
+
+.login-container{
+    border: solid var(--green);
+    padding: 1em;    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    min-width: 10em;
+}
+
+.data-input{ 
+    border: none;
+    resize: none;
+    width: 10em;
+    height: 2em;
+    margin-top: 0.5em;    
+    margin-bottom: 0.5em; 
+    margin-left: 15%;   
+    width: 70%;
+    border-bottom: solid var(--lightgreen);
+    transition: background-color linear 500ms,
+                border-bottom  linear 250ms;
+
+
+}
+.data-input:hover{
+    background-color: var(--darkwhite);
+}
+
+.data-input:focus{
+    border: none;
+    border-bottom:solid var(--green);
+}
+
+
+.btn{
+    font-family: myFont;
+    color: var(--black);
+    background-color: var(--green);
+    transition: ease-out 0.5s;
+    display: block;    
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2em;
+    margin-top: 2em;
+
+}
+
+.btn:hover{
+    background-color: var(--blue);
+    color: white;
+}
+
+
+/* Interactive css */
+
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  .mat-form-field{
+      width: 100%;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }

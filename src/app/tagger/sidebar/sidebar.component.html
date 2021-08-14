@@ -1,0 +1,42 @@
+<link rel="stylesheet" type="text/css" href="sidebar.component.css">
+
+<div class="sidenav">
+    
+    <a style="margin-top: 2em;" (click)="changeDisplay('images')">Imágenes</a>
+    <div id="images" style="display: none;">
+        <app-imagebar></app-imagebar>
+    </div>
+
+    <a (click)="changeDisplay('clases')">Etiquetas</a>
+    <div id="clases" style="display: none;">
+        <app-draws></app-draws>
+    </div>
+    
+    <a (click)="changeDisplay('import')">Datos</a>
+    <div id="import" style="display: none;">
+        <app-imports></app-imports>
+    </div>
+    <a (click)="changeDisplay('tools')">Herramientas</a>
+
+    <div id="tools" style="display: none;">
+        <div>
+            <p class="text">Lupa</p>
+            <div>
+                <div class="box">
+                    <!--
+                    <select id="id-selector" >
+                        <option class="opt" (click)="this.sidebarService.setZoom(2.0)">200%</option>
+                        <option class="opt" (click)="this.sidebarService.setZoom(3.0)">300%</option>                        
+                        <option class="opt" (click)="this.sidebarService.setZoom(4.0)">400%</option>                        
+                        <option class="opt" (click)="this.sidebarService.setZoom(5.0)">500%</option>
+                    </select>
+                    -->
+                    <label class="switch">
+                    <input id="toggle-glass" type="checkbox" (click)="activate()">
+                    <span class="slider round"></span>
+                    </label>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>

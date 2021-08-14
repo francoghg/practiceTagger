@@ -1,0 +1,240 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face{
+    font-family: myFontMedium;
+    src: url(./assets/font/AlrightSans-Medium-v3.otf);
+    
+}
+@font-face{
+
+    font-family: myFont;
+    src: url(./assets/font/AlrightSans-Regular-v3.otf);
+}
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+    input[type=checkbox],
+    input[type=radio] {
+        --active: var(--green);
+        --active-inner: var(--white);
+        --focus: 2px var(--green);
+        --border: var(--lightorange);
+        --border-hover: var(--orange);
+        --background: var(--white);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        height: 21px;
+        outline: none;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        margin: 0;
+        cursor: pointer;
+        border: 1px solid var(--bc, var(--border));
+        background: var(--b, var(--background));
+        transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+    }
+    input[type=checkbox]:after,
+    input[type=radio]:after {
+        content: "";
+        display: block;
+        left: 0;
+        top: 0;
+        position: absolute;
+        transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+    }
+    input[type=checkbox]:checked,
+    input[type=radio]:checked {
+        --b: var(--active);
+        --bc: var(--active);
+        --d-o: 0.3s;
+        --d-t: 0.6s;
+        --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+    }
+    input[type=checkbox]:disabled,
+    input[type=radio]:disabled {
+        --b: var(--disabled);
+        cursor: not-allowed;
+        opacity: 0.9;
+    }
+    input[type=checkbox]:hover:not(:checked),
+    input[type=radio]:hover:not(:checked) {
+        --bc: var(--border-hover);
+    }
+    input[type=checkbox]:focus,
+    input[type=radio]:focus {
+     box-shadow: 0 0 0 var(--focus);
+    }
+    input[type=checkbox]:not(.switch),
+    input[type=radio]:not(.switch) {
+     width: 21px;
+    }
+    input[type=checkbox]:not(.switch):after,
+    input[type=radio]:not(.switch):after {
+        opacity: var(--o, 0);
+    }
+    input[type=checkbox]:not(.switch):checked,
+    input[type=radio]:not(.switch):checked {
+    --o: 1;
+    }
+
+    input[type=checkbox] + label,
+    input[type=radio] + label {
+    font-size: 14px;
+    line-height: 21px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin-left: 4px;
+    color: var(--white);
+    font-family: myFont;
+    }
+
+    input[type=checkbox]:not(.switch) {
+    border-radius: 7px;
+    }
+    input[type=checkbox]:not(.switch):after {
+    width: 5px;
+    height: 9px;
+    border: 2px solid var(--active-inner);
+    border-top: 0;
+    border-left: 0;
+    left: 7px;
+    top: 4px;
+    transform: rotate(var(--r, 20deg));
+    }
+    input[type=checkbox]:not(.switch):checked {
+    --r: 43deg;
+    }
+    input[type=checkbox].switch {
+    width: 38px;
+    border-radius: 11px;
+    }
+    input[type=checkbox].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--ab, var(--border));
+    transform: translateX(var(--x, 0));
+    }
+    input[type=checkbox].switch:checked {
+    --ab: var(--active-inner);
+    --x: 17px;
+    }
+    input[type=checkbox].switch:disabled:not(:checked):after {
+    opacity: 0.6;
+    }
+
+    input[type=radio] {
+    border-radius: 50%;
+    }
+    input[type=radio]:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--active-inner);
+    opacity: 0;
+    transform: scale(var(--s, 0.7));
+    }
+    input[type=radio]:checked {
+    --s: 0.5;
+    }
+    }
+
+:root{
+
+    --blue:#00CCFF;
+    --lightblue:#8CDCFA;
+    --orange:#FA8C0A;
+    --lightorange:#FAC850;
+    --green:#14D78C;
+    --lightgreen:#8CF0BE;
+    --purple:#AA0AE6;
+    --lightpurple:#C896E6;
+    --pink:#FA5A6E;
+    --lightpink:#FA7882;
+
+    --black:#000000;
+    --lightblack:#333333;
+    --darkgray:#646464;
+    --gray:#808080;
+    --lightgray:#cccccc;
+    --darkwhite:#e6e6e6;
+    --white:#f2f2f2;
+
+    --fontfam:"";
+
+
+
+}
+.active-button{
+    background-color: var(--green);
+    color: var(--black);
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    margin-left: 1em;
+    border-style: solid;
+    border-color: var(--green);
+    border-width: 2px;
+    transition: all 500ms ease;
+    margin-left: 1em;
+    margin-right: .5em;
+  }
+
+  .inactive-button{
+    background-color: var(--darkgray);
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    margin-left: 1em;
+    border-style: solid;
+    
+    border-bottom: none;
+    border-color: var(--green);
+    border-width: 2px;
+    transition: all 500ms ease;
+    margin-left: 1em;
+    margin-right: .5em;
+    color: var(--white);
+
+  }
+
+.img-magnifier-glass {
+    position: absolute;
+    z-index: 4;
+    border: 3px solid var(--orange);
+    border-radius: 1em;
+    cursor: none;
+    /*Set the size of the magnifier glass:*/
+    width: 200px;
+    height: 100px;
+  }
+
+  body,html{
+      height: 100%;
+  }
+
+  .image_input{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.image_input+label{
+    background-color: var(--lightgreen);    
+    /* border-radius: 1em; */
+    padding: 1em;
+    border: solid var(--lightgreen);
+    border-radius: 4px;
+    transition: all 500ms ease;  
+    font-family: myFont;
+}
+
+.image_input + label:hover {
+    background-color: var(--green);
+    border-color: var(--green);
+    cursor: pointer;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

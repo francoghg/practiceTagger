@@ -1,0 +1,90 @@
+.container{
+    display: grid;
+    margin-left: 35%;
+    margin-left: 35%;
+    max-width: 30%;
+}
+h1{
+    font-size: 5vh;
+    text-align: center;
+    font-family: myFont;
+    color: var(--white);
+}
+.dataPreview{
+  width: 100%;
+  max-width: 100%;
+  /* margin-top: -4px; */
+}
+table{
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border-style: solid;
+  border-color: var(--green);
+}
+.tableContainer{
+  
+  max-height: 30em;  
+  overflow: auto;
+  display: none;
+}
+.message{
+  padding: 0em;
+  margin-top: 0em;
+  display: none;
+  border-style: solid;
+  border-color: var(--green);
+  margin-left: 17.65%;
+  margin-right: 17.65%;
+  width: 64.75%;
+  
+}
+.flex{
+  display: flex; 
+  width: fit-content;
+  margin-left: 17.65%;
+  margin-right: 17.65%;
+  /* max-width: 30%; */
+  
+}
+.flex>*{ 
+  /* grid-row: 2,4; */
+  /* margin: 0em; */
+  padding:0em;
+  /* border-style: solid;
+  border-color: aqua; */
+}
+.box{
+  display: flex;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+}
+.header{
+  width: 100%;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.inactive-button{
+  margin: 0em;
+}
+.inactive-button:focus{
+  background-color: var(--green);
+  color: var(--black);
+}
+
+.btnt{
+  margin: 0em;
+  padding: 0em;
+  border-style: solid;
+  /* background-color: aqua; */
+}
+
+.yolo{
+  padding-right: 1em;
+  padding-top: 1em;
+  margin-left: 25%;
+  background-color: fade(100%);
+  border-style: none;  
+  height: 3em;
+}

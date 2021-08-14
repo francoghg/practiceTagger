@@ -1,0 +1,459 @@
+@font-face{
+    font-family: myFont;
+    src: url(/src/assets/font/AlrightSans-Medium-v3.otf);
+} 
+  
+/* my css -> */
+
+.title{
+    font-family: myFont;
+    margin-left: 1em;
+    color: var(--white);
+}
+.class-container{
+    margin-left: 1em;
+    margin-right: 0.4em;
+
+}
+.classContainer {
+    height: 150px;
+    background-color: var(--darkwhite);
+    border-color:var(--orange);
+    border-radius: 10%;
+    border-style: solid;
+    max-width: 180px;
+    display: block;
+    overflow-y: auto;    
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+.classContainer li{
+    color: var(--lightblack);    
+    font-size: small;
+    padding-left: 0px;
+    margin-left: 3px;    
+    font-family: myFont;
+    
+}
+
+.classContainer .classActive, .lista:hover{
+    color: var(--purple);
+    font-weight: 800;
+    cursor: pointer;    
+}
+
+.btn{
+    background-color: var(--lightgreen);    
+    padding: 1em;
+    border: solid var(--lightgreen);
+    border-radius: 4px;
+    transition: all 500ms ease;  
+    font-family: myFont;
+    margin-bottom: 1em;
+}
+
+.btn:hover{
+    background-color: var(--green);
+    border-color: var(--green);
+}
+
+.shapecreate{
+    background-color: var(--lightgreen);    
+    padding: .5em;
+    border: solid var(--lightgreen);
+    border-radius: 4px;
+    transition: all 500ms ease;  
+    font-family: myFont;
+    margin-bottom: 1em;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.shapecreate:hover{
+    background-color: var(--green);
+    border-color: var(--green);
+}
+
+.colorLabel{
+    font-size: medium;
+}
+
+.delete{
+    background-color: var(--lightorange);    
+    border: solid var(--lightorange);
+}
+.delete:hover{
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+
+.small{
+    padding: .2em;
+}
+
+
+.colorInput{
+    margin-left: 1em;
+    margin-bottom: 5px;
+    background-color:white;
+    border-style: solid;
+    border-radius: 10%;
+    border-color: lightgreen;
+    transition: all 250ms ease;
+    width: 50%;
+}
+.colorInput:hover{
+    border-color: white;
+    cursor: pointer;
+}
+
+.text{
+    border: none;
+    resize: none;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+    width: 5ch;
+    height: 4ch;
+    box-sizing: border-box;
+    font-size: small;
+    border-bottom: solid var(--lightgreen);
+    background-color: var(--darkgray);
+    color: var(--white);
+    transition: all 500ms linear;
+
+
+}
+.text:hover{
+    background-color: var(--gray);
+}
+.text:focus{
+    border: none;
+    border-bottom: solid var(--green);
+}
+.name{
+    border: none;
+    resize: none;
+    width: 15ch;
+    height: 4ch;
+    margin-left: 1em;
+    box-sizing: border-box;
+    border-bottom: solid var(--lightgreen);
+    background-color: var(--darkgray);
+    color: var(--white);
+    transition: all 500ms linear;
+
+}
+.name:hover{
+    background-color: var(--gray);
+}
+.name:focus{
+    border: none;
+    border-bottom: solid var(--green);
+}
+.nameLabel{
+    font-size: medium;
+}
+label{
+    margin-left: 5px;
+}
+a{
+    position: absolute;
+}
+/* class section */
+
+.material-icons{
+    background-color: var(--lightgreen);    
+    border: solid var(--lightgreen);
+    border-radius: 4px;
+    transition: all 500ms ease;  
+    margin-bottom: 1em;
+}
+.material-icons:nth-child(1):hover{
+    background-color: var(--green);    
+    border: solid var(--green);
+}
+.material-icons:nth-child(2):hover{
+    background-color: var(--orange);
+        
+    border: solid var(--orange);
+}
+.alert{
+    width: auto;
+    height: auto;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    background-color: red;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    font-size: small;
+}
+
+.closebtn {
+    margin-left: 1em;
+    color: white;
+    font-weight: bold;
+    /* float: right; */
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+  .classDelete{      
+    width: auto;
+    height: auto;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--darkwhite);
+    border-width: 2px;
+    background-color: var(--lightorange);
+    color: var(--black);
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .radio-inline{
+      margin-left: 1em;
+
+  }
+
+
+
+  .class_creation{
+    margin-left: 1em;
+    width: 80%;
+    border: solid var(--green);
+    background-color: var(--darkgray);
+    margin-bottom: 1em;
+    color: var(--white);
+    max-height: 20em;
+    overflow: auto;
+  }
+
+  .atribute:nth-child(1){    
+    margin-left: .5em;
+    margin-top: .1em;
+  }
+  .atribute:nth-child(2){    
+    margin-left: .5em;
+    margin-top: .1em;
+  }
+
+  .atributebox{
+    border: none;
+    resize: none;
+    margin-left: 1em;
+    margin-bottom: 10px;
+    width: 5em;
+    height: 2.5em;
+    box-sizing: border-box;  
+     border-bottom: solid var(--lightgreen);
+    background-color: var(--darkgray);
+    color: var(--white);
+    transition: all 500ms linear;
+
+}
+
+.namebox{
+    border: none;
+    resize: none;
+    margin-left: 1em;
+    margin-bottom: 10px;
+    width: 5em;
+    height: 2.5em;    
+    font-size: small;
+    border-bottom: solid var(--lightgreen);
+    background-color: var(--darkgray);
+    color: var(--white);
+    transition: all 500ms linear;
+    
+}
+
+.atributebox:hover{
+    border-color: green;
+}
+
+.atributebox:focus{
+    border-color: green;
+}
+
+.pointInput{
+    
+    border: none;
+    resize: none;
+    border-bottom: solid var(--lightgreen);
+    background-color: var(--darkgray);
+    
+    margin-left: 1em;
+    margin-bottom: 10px;
+    width: 3em;
+}
+
+.pointInput:hover{
+    cursor:default;
+}
+
+
+.btn-container{
+    margin-left: 1em;
+}
+
+/* Dropdown Style */
+
+
+.box select {
+background-color:var(--gray);
+color: var(--black);
+padding: 12px;
+width: 3.5em;
+font-family: myFont;
+box-shadow: var(--purple);
+outline: none;
+margin-left: 30%;
+margin-top: 1em;
+margin-bottom: 1em;
+border-radius: 4px;
+cursor: pointer;
+border: none;
+}
+
+.box select:hover {
+    background-color: var(--orange);
+}
+
+.image_input{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.image_input+label{
+    background-color: var(--lightgreen);    
+    /* border-radius: 1em; */
+    padding: 1em;
+    border: solid var(--lightgreen);
+    border-radius: 4px;
+    transition: all 500ms ease;  
+    font-family: myFont;
+}
+
+.image_input + label:hover {
+    background-color: var(--green);
+    border-color: var(--green);
+    cursor: pointer;
+}
+.mainBlock, .block {
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:        border-box;
+}
+.mainBlock{
+    width: 100%;
+    height: 2em;
+}
+.block{
+    height: 2em;
+    width: 31%;
+    max-width: 31%;
+    float: left;
+    margin: 0 1% 0 1%; 
+    font-family: myFont;
+    color: var(--white);
+}
+
+.switch {
+    position: relative;
+    width: 4em;
+    height: 2em;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--lightgray);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 2em;
+    width: 2em;
+    background-color: var(--white);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--green);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--green);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(2em);
+    -ms-transform: translateX(2em);
+    transform: translateX(2em);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  h5 {
+    margin-left: -0.5em;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--lightgray);
+    display: block;
+    cursor: pointer;    
+    font-family:myFontMedium;
+    transition: linear 250ms;
+    max-width: fit-content;
+}
+
+h5:hover {
+    color: var(--darkgray);
+    background-color: var(--gray);
+}
+
+h4 {
+    font-size: 1em;
+}
+
+.class_name{
+    font-size:0.7em;
+}

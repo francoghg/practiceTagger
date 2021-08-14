@@ -1,0 +1,27 @@
+.button-container{
+    margin-left: 1em;
+}
+.btn{
+    background-color: var(--lightorange);       
+    padding: 1em;
+    border: solid var(--lightorange);
+    /* border-radius: 1em; */
+    transition: all 500ms ease;  
+    font-family: myFont;
+}
+
+.btn:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+
+.export{
+    background-color: var(--lightgreen);
+    border-color: var(--lightgreen);
+    margin-left: 1em;
+}
+
+.export:hover{
+    background-color: var(--green);
+    border-color: var(--green);
+}

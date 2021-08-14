@@ -1,0 +1,26 @@
+h1{
+    font-size: 5vh;
+    text-align: center;
+    font-family: myFont;
+    color: var(--white);
+}
+.container{
+    display: grid;
+    margin-left: 35%;
+    margin-left: 35%;
+    max-width: 30%;
+}
+
+.btn{
+    background-color: var(--lightgreen);
+    border-color: var(--lightgreen);
+    margin-left: 1em;
+    transition: linear 250ms;
+    padding: 1em;
+    font-family: myFont;
+}
+
+.btn:hover{
+    background-color: var(--green);
+    border-color: var(--green);
+}
