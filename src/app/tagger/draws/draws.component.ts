@@ -576,9 +576,9 @@ export class DrawsComponent implements OnInit {
     return Object.keys(obj).length === 0;
   }
   fillCategories(){
-    const id=["idBase","idGeo","idGeologia"];
-    const nombre=["Base","Geotecnia","Geología"];
-    const upClass=["base","geo","geologia"];
+    const id=["idBase","idGeo"];
+    const nombre=["Base","Geotecnia"];
+    const upClass=["base","geo"];
     //const id=["idBase","idGeo","idLito","idAlt","idMnz"];
     //const nombre=["BaseLine","Geotecnia","Litología","Alteración","Mineralización"];
     //const upClass=["base","geo","lito","alt","mnz"];

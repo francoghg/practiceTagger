@@ -1077,7 +1077,7 @@ export class DrawsService{
         return data;
     }
 
-    
+    /*
     // Carga clases por defecto
     async defaulClases(){
         this.clases=[];
@@ -1098,11 +1098,11 @@ export class DrawsService{
             tempClass.view=true;
             tempClass.icon=icons[index];
             tempClass.upClass=upClas[index]
-            /**
+            
             if(names[index]==="T" || names[index]==="L" || names[index]==="A" || names[index]==="MNZ" || names[index]==="OBS"){
                 tempClass.atribute='p1:';
             }
-            **/
+            
             if(names[index]==="CAN"){
                 tempClass.atribute='dist:';
             }
@@ -1125,6 +1125,52 @@ export class DrawsService{
             this.clases.push(tempClass)     
         }
     }
+    */
+
+        // Carga clases por defecto
+        async defaulClases(){
+            this.clases=[];
+            //const names=['L','LF','A','AF','MNZ','MNZF','OBS','OBSF','CAN','ROC','T','T2','C','M','MG','MM','MF','J','J3','V','V3']
+            const names=['CAN','ROC','J3','V3','M','MTV']
+            //const showNames=['Litología','Litología (Fin)','Alteración','Alteración (Fin)','Mineralización','Mineralización (Fin)','Observación','Observación (Fin)','Escala','Eje Sondaje', 'Taco','Taco Falso','Canaleta Vacía','Molido','Molido Grueso','Molido Medio','Molido Fino','Fractura','Fractura (3 ptos.)','Vetilla','Vetilla (3 ptos.)']
+            const showNames=['Escala','Eje Sondaje','Fractura','Vetilla','Molido','Molido (TV)']
+            //const tipes=['arrow','arrowc', 'arrow','arrowc', 'arrow','arrowc','arrow','arrowc','line','line', 'box','box','box','box','box','box','box','box','line','box','line']
+            const tipes=['line','line','line','line','box','box']
+            //const lines=[0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,2,0,2]
+            const lines=[1,1,2,2,0,0]
+            //const colors=['#FF0000','#FF0000','#FF8000','#FF8000','#FFFF00','#FFFF00','#FFFFFF','#FFFFFF','#FFFFFF','#000000','#000000','#C0C0C0','#FFFFFF','#0000FF','#800080','#FF00FF','#FFC0CB','#00FF00','#00FF00','#008000','#008000']
+            const colors=['#FFFFFF','#000000','#00FF00','FF8000','0000FF','FF0000']
+            //const icons=["litologia.png","litologiaFin.png","alteracion.png","alteracionFin.png","mineralizacion.png","mineralizacionFin.png","observacion.png","observacionFin.png","escala.png","eje.png","taco.png","tacoFalso.png","canaletaVacia.png","molido.png","molidoGrueso.png","molidoMedio.png","molidoFino.png","fractura.png","fractura3ptos.png","vetilla.png","vetilla3ptos.png"]
+            const icons=["escala.png","eje.png","fractura3ptos.png","vetilla3ptos.png","molido.png","molidoTV.png"]
+            //const upClas=['geologia', 'geologia', "geologia",'geologia', 'geologia', "geologia","geologia","geologia","base","base", "base","base","base","geo","geo","geo","geo","geo","geo","geo","geo"]
+            const upClas=["base","base","geo","geo","geo","geo"]
+            for (let index = 0; index < names.length; index++) {
+                let tempClass = new Clase();
+                tempClass.showName=showNames[index];
+                tempClass.name=names[index];
+                tempClass.shape=tipes[index];
+                tempClass.lines=lines[index].toString();
+                tempClass.color=colors[index];
+                tempClass.view=true;
+                tempClass.icon=icons[index];
+                tempClass.upClass=upClas[index]
+                 
+                if(names[index]==="CAN"){
+                    tempClass.atribute='dist:';
+                }
+                if(names[index]==="J3" || names[index]==="V3"){
+                    tempClass.atribute='alfa:;beta:';
+                }
+                if(names[index]==="M"){
+                    tempClass.atribute='id:';
+                }
+                if(names[index]==="MTV"){
+                    tempClass.atribute='id:;frac:;obs:';
+                }
+                
+                this.clases.push(tempClass)     
+            }
+        }
 
 
 

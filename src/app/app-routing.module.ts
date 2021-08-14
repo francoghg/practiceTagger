@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeGuard } from './home/home/home.guard';
+
+/*
 const routes: Routes = [
   {
     path:'home',
@@ -31,6 +33,14 @@ const routes: Routes = [
   {
     path:'**',
     redirectTo:"home",
+  }
+];
+*/
+
+const routes: Routes = [
+  {
+    path:'',
+    loadChildren:()=>import('./tagger/tagger.module').then(m=>m.TaggerModule)
   }
 ];
 
